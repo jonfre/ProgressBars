@@ -98,6 +98,13 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         <item>Night</item>
         <item>Auto (location / time based)</item>
     </string-array>
+
+    <string name="pref_first_day_of_week">First day of week</string>
+    <string-array name="first_days_of_week_display">
+        <item>Sunday</item>
+        <item>Monday</item>
+    </string-array>
+
     <string name="loc_perm_title">"Allow access to location?"</string>
     <string name="loc_perm_msg">"You will be asked to allow location access.\n\nIf granted, your location will be used to switch the theme at local sunrise / sunset. Otherwise, hard-coded times will be used instead.\n\nLocation data is not stored or used in any other way."</string>
 

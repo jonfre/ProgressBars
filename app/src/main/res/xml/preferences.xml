@@ -42,4 +42,12 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         android:entryValues="@array/theme_values"
         android:defaultValue="@string/theme_values_default"
         />
+
+    <ListPreference
+        android:key="first_day_of_week"
+        android:defaultValue="1"
+        android:entries="@array/first_days_of_week_display"
+        android:entryValues="@array/first_days_of_week_values"
+        android:title="@string/pref_first_day_of_week"
+        />
 </PreferenceScreen>

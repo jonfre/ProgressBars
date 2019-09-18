@@ -21,6 +21,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 package org.mattvchandler.progressbars.settings
 
+import android.annotation.TargetApi
 import android.app.DatePickerDialog
 import android.app.Dialog
 import android.os.Bundle
@@ -70,8 +71,18 @@ class Datepicker_frag: DialogFragment()
         month = cal.get(Calendar.MONTH)
         day = cal.get(Calendar.DAY_OF_MONTH)
 
-
-        return DatePickerDialog(activity!!, activity as Settings?, year, month, day)
+        var d = DatePickerDialog(activity!!, activity as Settings?, year, month, day)
+        if (android.os.Build.VERSION.SDK_INT >= 21) {
+            var setting: Int
+            try {
+                setting = Integer.parseInt(PreferenceManager.getDefaultSharedPreferences(context).getString("first_day_of_week", "1")!!)
+            } catch (e: Exception) {
+                setting = Calendar.SUNDAY
+            }
+            @TargetApi(21)
+            d.datePicker.firstDayOfWeek = setting
+        }
+        return d
     }
 
     companion object

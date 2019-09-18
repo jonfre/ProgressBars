@@ -59,6 +59,7 @@ class Preferences: Dynamic_theme_activity()
             PreferenceManager.setDefaultValues(activity, R.xml.preferences, false)
             findPreference<ListPreference>("date_format")?.summaryProvider = ListPreference.SimpleSummaryProvider.getInstance()
             findPreference<ListPreference>("theme")?.summaryProvider = ListPreference.SimpleSummaryProvider.getInstance()
+            findPreference<ListPreference>("first_day_of_week")?.summaryProvider = ListPreference.SimpleSummaryProvider.getInstance()
         }
 
         // register / unregister listener
